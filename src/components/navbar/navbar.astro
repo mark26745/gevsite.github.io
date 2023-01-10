@@ -7,23 +7,23 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 const menuitems = [
   {
     title: "Home",
-    path: "/",
+    path: "/gevsite.github.io/",
   },
   {
     title: "About",
-    path: "/#about",
+    path: "/gevsite.github.io/#about",
   },
   {
     title: "Services",
-    path: "/#services",
+    path: "/gevsite.github.io/#services",
   },
   {
     title: "Partners",
-    path: "/#partners",
+    path: "/gevsite.github.io/#partners",
   },
   {
     title: "Portfolio",
-    path: "/portfolio",
+    path: "portfolio",
   },
 ];
 ---
@@ -33,7 +33,7 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/">
-          <img class="w-20  h-15" src="/images/logos/logo.svg" alt="geviton-logo">
+          <img class="w-20  h-15" src="images/logos/logo.svg" alt="geviton-logo">
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -66,13 +66,13 @@ const menuitems = [
           }
         </ul>
          <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="/blog" size="md" block>Blog</Link>
+          <Link href="blog" size="md" block>Blog</Link>
         </div>
       </MenuItems>
     </Astronav>
      <div>
       <div class="hidden lg:flex items-center">
-        <Link href="/blog" size="md">Blog</Link>
+        <Link href="blog" size="md">Blog</Link>
       </div>
     </div>
   </header>
