@@ -36,7 +36,7 @@ const socials = [
   <p class="text-slate-200 mt-4 text-lg md:text-xl">
     {
       contacts.map((contact)=>(
-        <a href={contact.link}>{contact.text}</a> <br>
+        <a href={contact.link} class="hover:text-orange-500">{contact.text}</a> <br>
       ))
     }
   </p>
@@ -45,7 +45,7 @@ const socials = [
 {
   socials.map((platform)=>(
     <a href={platform.link}>
-             <Icon class="text-white w-10 h-10" name={platform.icon} />
+             <Icon class="text-white w-10 h-10 hover:text-orange-500" name={platform.icon} />
     </a>
   ))
 }
