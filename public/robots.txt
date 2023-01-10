@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://astroship.web3templates.com/sitemap-index.xml
+Sitemap: https://mark26745.github.io/gevsite.github.io/sitemap-index.xml

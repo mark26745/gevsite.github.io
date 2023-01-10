@@ -56,7 +56,8 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900"
+                      rel="prefetch">
                       {item.title}
                     </a>
                   </li>
@@ -72,7 +73,7 @@ const menuitems = [
     </Astronav>
      <div>
       <div class="hidden lg:flex items-center">
-        <Link href="/gevsite.github.io/blog" size="md">Blog</Link>
+        <Link href="/gevsite.github.io/blog" size="md" rel="prefetch">Blog</Link>
       </div>
     </div>
   </header>
