@@ -1,4 +1,6 @@
 ---
+import Sectionhead from "./sectionhead.astro";
+import { Icon } from "astro-icon";
 const contacts = [ 
   {
     text: "+254724149923",
@@ -13,14 +15,24 @@ const contacts = [
     link: "mailto:info@geviton.co.ke" 
   }
 ]
+
+const socials = [
+  {
+    link: "https://twitter.com/gevitonltd",
+    icon: "codicon:twitter"
+  },
+  {
+    link: "https://www.linkedin.com/company/geviton-enterprises-limited/",
+    icon: "uim:linkedin-alt"
+  }
+]
 ---
 
 <div
-  class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
-  <h2 class="text-white text-4xl md:text-6xl tracking-tight">
-   Contact Us 
-  </h2>
-  <br>
+  class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center text-white">
+
+  <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-white">Contact Us</h1>
+  
   <p class="text-slate-200 mt-4 text-lg md:text-xl">
     {
       contacts.map((contact)=>(
@@ -29,4 +41,14 @@ const contacts = [
     }
   </p>
   <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8466328573245!2d36.80145091475397!3d-1.2645417990776702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f171556f250f7%3A0x28319a5d3b7730a9!2sKrishna%20Centre!5e0!3m2!1sen!2ske!4v1673275387638!5m2!1sen!2ske"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="flex flex-row mt-4">
+{
+  socials.map((platform)=>(
+    <a href={platform.link}>
+             <Icon class="text-white w-10 h-10" name={platform.icon} />
+    </a>
+  ))
+}
 </div>
+
+  </div>
