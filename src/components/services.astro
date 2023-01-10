@@ -1,40 +1,43 @@
 ---
-// @ts-ignore
 import Container from "./container.astro";
+import Sectionhead from "./sectionhead.astro";
+import { Icon } from "astro-icon";
 const features = [
   {
     title: "Ideation",
     description: "We collaborate with startups, enterprises and innovators across different sectors to generate feasible product ideas with clear development and manufacturing deliverables.", 
-    image: "images/illustrations/light-bulb-svgrepo-com.svg",
+    icon: "carbon:idea",
   },
   {
     title: "Prototyping",
     description:
       "We leverage our extensive experience of the best hardware platforms for affordable prototyping/RnD costs with very fair mass production clauses.",
-    image: "images/illustrations/gear-svgrepo-com.svg",
+    icon: "bi:gear-wide-connected",
   },
   {
     title: "Mass Production",
     description:
       "We have good working relations with PCBA, product assembly factories and key electronic component distributors that allows to plan and mesh our mass production runs seamlessly with product timelines.",
-    image: "images/illustrations/factory-svgrepo-com.svg",
+    icon: "fluent:building-factory-16-filled",
   },
 ];
 ---
 <Container id="services">
-<div class="mt-16 md:mt-0" >
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">
-  Our Services
-  </h2>
-</div>
+    <Sectionhead>
+      <Fragment slot="title">Our Services</Fragment>
+      <Fragment slot="desc"></Fragment>
+    </Sectionhead>
 
 <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
   {
     features.map((item,index) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1">
-          <img class="h-250 w-250 rounded" src={item.image} width="250px" height="250px" />
-        </div>
+      <div class="mt-1 bg-orange-500 rounded-full  p-2 w-20 h-20 shrink-0"> 
+          {(
+             <Icon class="text-black" name={item.icon} />
+          )}
+        
+          </div>
         <div>
           <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
           <p class="text-lg text-slate-500 mt-2 leading-relaxed">{item.description}</p>

@@ -102,11 +102,12 @@ const projects = [
         {
           projects.map((project,index)=>(
             <li class="my">
-              <div class:list={["mx-5 md:flex flex-row sx:flex-col",(index%2) && "flex-row-reverse"]}>
-                <div class="mx-2">
+              <div class:list={["mx-5 md:flex flex-row sx:flex-col ","place-content-center",(index%2) && "flex-row-reverse"]}>
+                <div class="mx-2 items-center">
                     {
                       project.images.map((image)=>(
-                          <img 
+                          <img
+                          class:list={["rounded drop-shadow place-self-center"]} 
                           src={image} 
                           alt={image}/>
                       ))

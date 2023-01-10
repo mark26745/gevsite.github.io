@@ -1,64 +1,70 @@
 ---
 // @ts-ignore
 import Container from "./container.astro";
+import Sectionhead from "./sectionhead.astro";
 const partners = [
-{
-   name: "Gearbox Europlacer",
-   link: "https://www.gearbox-europlacer.com",
-   logo: "images/logos/partners/gearbox-europlacer.png"
-},
-{
-   name:"Ultra Red Technologies", 
-   link:"https://ultrared.biz/",
-   logo:"images/logos/partners/ultra-red-technologies.png"
-},
-{
-   name:"Ecobodaa",
-   link:"https://www.ecobodaa.bike/",
-   logo:"images/logos/partners/ecobodaa.png"
-},
-{
-   name:"Angaza Elimu",
-   link:"https://angazaelimu.com/",
-   logo:"images/logos/partners/angaza-elimu.png"
-},
-{
-   name:"CyberX Africa",
-   link:"https://cyberx.co.ke/", 
-   logo:"images/logos/partners/cyber-x.png"
-},
-{
-   name:"Centre for Science and Technology Innovation", 
-   link:"https://www.csti.or.ke/about",
-   logo:"images/logos/partners/CSTI.webp"
-},
-{
-   name:"Enzi Electric Motor Co. Ltd.",
-   link:"https://enzimotors.com/",
-   logo:"images/logos/partners/enzi.png"
-},
-{
-   name:"MijiniFresh Ltd." ,
-   link:"https://mijinifresh.com", 
-   logo:"images/logos/partners/mijini.png"
-}
-
-]
+  {
+    name: "Gearbox Europlacer",
+    link: "https://www.gearbox-europlacer.com",
+    logo: "images/logos/partners/gearbox-europlacer.png",
+  },
+  {
+    name: "Ultra Red Technologies",
+    link: "https://ultrared.biz/",
+    logo: "images/logos/partners/ultra-red-technologies.png",
+  },
+  {
+    name: "Ecobodaa",
+    link: "https://www.ecobodaa.bike/",
+    logo: "images/logos/partners/ecobodaa.png",
+  },
+  {
+    name: "Angaza Elimu",
+    link: "https://angazaelimu.com/",
+    logo: "images/logos/partners/angaza-elimu.png",
+  },
+  {
+    name: "CyberX Africa",
+    link: "https://cyberx.co.ke/",
+    logo: "images/logos/partners/cyber-x.png",
+  },
+  {
+    name: "Centre for Science and Technology Innovation",
+    link: "https://www.csti.or.ke/about",
+    logo: "images/logos/partners/CSTI.webp",
+  },
+  {
+    name: "Enzi Electric Motor Co. Ltd.",
+    link: "https://enzimotors.com/",
+    logo: "images/logos/partners/enzi.png",
+  },
+  {
+    name: "MijiniFresh Ltd.",
+    link: "https://mijinifresh.com",
+    logo: "images/logos/partners/mijini.png",
+  },
+];
 ---
+
 <Container id="partners">
-<div class="mt-24" id="partners">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">Partners</h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
+  <Sectionhead>
+    <Fragment slot="title">Partners</Fragment>
+    <Fragment slot="desc"></Fragment>
+  </Sectionhead>
+  <div class="flex gap-8 md:gap-20 place-content-center flex-wrap mt-16">
     {
-      partners.map((partner)=>(
+      partners.map((partner) => (
         <div>
           <a href={partner.link}>
-            <img class="saturate-100 hover:saturate-200" width="150px" src={partner.logo} alt={partner.name} />
-            </a>
-          </div>
+            <img
+              class="saturate-100 hover:saturate-200"
+              width="150px"
+              src={partner.logo}
+              alt={partner.name}
+            />
+          </a>
+        </div>
       ))
     }
-
   </div>
-</div>
 </Container>
