@@ -1,0 +1,134 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { Swiper, SwiperSlide } from "swiper/react";  // import Swiper JS
+import 'swiper/css';
+
+
+const projects = [
+ { 
+  name : "Ecobodaa",
+  tagline: "Smart e-Bike PayGo Solution",
+  tags: ["E-Mobility"],
+  description: "Ecobodaa needed a solution to enable their riders pay for battery energy according to how much they can afford instead of burdening them with purchasing full batteries that are expensive.",
+  link:"https://www.ecobodaa.bike/",
+  images: ["/images/portfolio/ecobodaa.jpg"]
+ },
+ {
+  name:"Enzi Electric Motor Co. Ltd.",
+  tagline: "Smart e-Bike Battery Management System", 
+  tags: ["E-Mobility"],
+  description: "Enzi Motors are developing their e-bikes on an end-to-end basis - battery banks, bike frames and swap stations. They partnered with us to develop a smart BMS module that reports critical data about battery health and location to the Enzi Management platform.", 
+  link:"https://enzimotors.com/",
+  images: ["/images/portfolio/enzi-motors.jpg"]
+ },
+ { 
+  name : "AlertRider", 
+  tagline: "Biker Safety Solution for Platinum Attitude LLC",
+  tags: ["Mobility"],
+  description: "AlertRider is a product that is used as an early warning device for motor bike riders who are travelling together.",
+  images: ["/images/portfolio/alertrider.jpg"]
+ },
+ {
+  name : "Angaza Elimu",
+  tagline: "Smart Learning Kit with IoT Platform",
+  tags: ["Education"], 
+  description: "This solution is for young learners to explore the concept of smart systems and how devices can be integrated. ",
+  link:"https://angazaelimu.com/",
+  images: ["/images/portfolio/angaza-elimu.jpg"]
+ },
+ {
+  name : "SIMTANKH20",
+  tagline: "Ultra Red/ Silafrica Smart Tank Level Sensor",
+  tags: ["Water Management"], 
+  description: "Ultra Red Technologies contracted us to develop a tank level monitoring device that also reports location data.",
+  link:"https://ultrared.biz/",
+  images: ["/images/portfolio/simtank.jpg"]
+},
+{
+  name : "Center for Science and Technology Innovations",
+  tagline: "Smart Water Quality",  
+  tags: ["Research"], 
+  description: "Design of remote water quality meters for research purposes.",
+  link:"https://www.csti.or.ke/about",
+  images: ["/images/portfolio/CSTI.jpg"]
+},
+{
+  name :  "MijiniFresh Limited",
+  tagline: "Data Collection System for an Indoor Hydroponics Farm Setup",
+  tags: ["Agriculture"], 
+  description: "MijiniFresh partnered with us on the design and implementation of a smart farming solution to be used in the MFL's hydroponics farm setup for continuous monitoring and control of site systems.",
+  link:"https://mijinifresh.com", 
+  images: ["/images/portfolio/mijinifresh.jpg"]
+},
+{
+  name : "GSK Kenya",
+  tagline: "" ,
+  tags: ["Industrial Automation"],
+  description: "Data integrity solution based on a bespoke smart integration module that links the factory weighing scales and printers for quality assurance tagging/labelling purposes.",
+  images: ["/images/portfolio/GSK.jpg"]
+},
+{
+  name : "EABL",
+  tagline:  "",
+  tags: ["Industrial Automation"],
+  description: "Design and installation of conveyor line integration modules for Avery Weights ZM303 Indicators and SATO M-8460Se  and Videojet labelers.",
+  images: ["/images/portfolio/EABL.jpg"]
+},
+{
+  name : "KeNHA",
+  tagline:   "",
+  tags: ["Industrial Automation", "Transport"],
+  description: "Oneway traffic control and display system for the KeNHA weighbridge in Mlolongo and Mariakani.", 
+  images: ["/images/portfolio/KENHA.jpg"]
+},
+{
+  name : "Decamove",
+  tagline: "",
+  tags: ["VR"],
+  description: "Design of a new product used to track body orientation of a user in virtual reality.",
+  images: ["/images/portfolio/decamove.jpg"]
+}
+]
+---
+
+<Layout title="Portfolio">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Our Portfolio</Fragment>
+      <Fragment slot="desc">Projects we've worked on</Fragment>
+    </Sectionhead>
+    <main class="mt-16">
+      <ul class="grid gap-16 max-w-4xl mx-auto">
+        {
+          projects.map((project,index)=>(
+            <li class="my">
+              <div class:list={["mx-5 md:flex flex-row sx:flex-col",(index%2) && "flex-row-reverse"]}>
+                <div class="mx-2">
+                    {
+                      project.images.map((image)=>(
+                          <img 
+                          src={image} 
+                          alt={image}/>
+                      ))
+                    }
+                </div>
+                <div class:list={["place-self-center py-5 text-center"]}>
+                  <h2 class="font-bold text-3xl text-gray-800"> {project.name}</h2>
+                  <div class="my ">
+                    {project.tags.map((tag)=>(
+                      <span class="text-slate-500">#{tag} </span>
+                    ))}
+                  </div>
+                  <p>{project.description}</p>
+                 </div>
+                </div>
+            </li>
+
+          ))
+        }
+      </ul>
+    </main>
+  </Container>
+</Layout>

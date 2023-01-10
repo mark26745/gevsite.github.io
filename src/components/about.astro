@@ -1,0 +1,30 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const about = [
+    {
+     title: "Mission", 
+     text: "Our mission is to provide innovative and cost-effective solutions to our customers' engineering and manufacturing challenges, enabling them to bring their ideas to market quickly and efficiently."
+    },
+    {
+    title: "Vision",
+    text: "Our vision is to be the go-to partner for businesses seeking reliable and comprehensive electronic design and manufacturing services, helping them stay competitive and profitable in a rapidly changing market."
+}]
+---
+
+  <Container id="about">
+    <Sectionhead>
+      <Fragment slot="title">About Us</Fragment>
+      <Fragment slot="desc"> We are the rocket fuel that will propel the hardware culture in Africa.</Fragment>
+    </Sectionhead>
+    {
+      about.map((info)=>(
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16 text-center">
+      <h2 class="font-bold text-3xl text-gray-800">{info.title}</h2>
+      <p class="text-lg leading-relaxed text-slate-500">{info.text}</p>
+    </div>
+      ))
+      }
+
+  </Container>

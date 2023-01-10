@@ -1,0 +1,48 @@
+---
+import { Picture } from "@astrojs/image/components";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24 ">
+  <div class="py-6 md:order-1 hidden md:block">
+    <Picture
+    class:list={"hidden rounded-tr-full rounded-bl-full lg:flex"}
+      src="/images/hero.jpg"
+      alt="Geviton Employee Working"
+      widths={[200, 400, 600]}
+      aspectRatio="4:3"
+      sizes="(max-width: 400px) 80vw, 500px"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      <span>Ideation.</span> <br>
+      <span>Prototyping.</span> <br>
+      <span class="text-orange-500">Production.</span>
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+     We are a  electronic design and manufacturing company that has been solving engineering and manufacturing challenges for customers operating in different markets. 
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="/portfolio"
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+      Portfolio
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="/blog"
+        class="flex gap-1 items-center justify-center"
+        >
+      Blog
+      </Link>
+    </div>
+  </div>
+</main>
