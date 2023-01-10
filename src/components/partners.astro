@@ -54,10 +54,10 @@ const partners = [
   <div class="flex gap-8 md:gap-20 place-content-center flex-wrap mt-16">
     {
       partners.map((partner) => (
-        <div>
+        <div class="place-items-center">
           <a href={partner.link}>
             <img
-              class="saturate-100 hover:saturate-200"
+              class="place-self-center transition ease-in-out delay-150 saturate-100 hover:saturate-200 hover:scale-110 duration-300"
               width="150px"
               src={partner.logo}
               alt={partner.name}
