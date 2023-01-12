@@ -1,28 +1,68 @@
 ---
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+const title = "About Us"
+const tagline = "Geviton breathes life into your ideas." 
 const about = [
-    {
-     title: "Mission", 
-     text: "Our mission is to provide innovative and cost-effective solutions to our customers' engineering and manufacturing challenges, enabling them to bring their ideas to market quickly and efficiently."
-    },
-    {
+  {
+    title: "Mission",
+    text: "Our mission is to provide innovative and cost-effective solutions to our customers' engineering and manufacturing challenges, enabling them to bring their ideas to market quickly and efficiently.",
+  },
+  {
     title: "Vision",
-    text: "Our vision is to be the go-to partner for businesses seeking reliable and comprehensive electronic design and manufacturing services, helping them stay competitive and profitable in a rapidly changing market."
-}]
+    text: "Our vision is to be the go-to partner for businesses seeking reliable and comprehensive electronic design and manufacturing services, helping them stay competitive and profitable in a rapidly changing market.",
+  },
+];
 ---
 
-  <Container id="about">
-    <Sectionhead>
-      <Fragment slot="title">About Us</Fragment>
-      <Fragment slot="desc">We are the rocket fuel propelling the hardware innovation in Africa.</Fragment>
-    </Sectionhead>
-    {
-      about.map((info)=>(
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16 text-center">
-      <h2 class="font-bold text-3xl text-gray-800">{info.title}</h2>
-      <p class="text-lg leading-relaxed text-slate-500">{info.text}</p>
-    </div>
-      ))
-      }
-  </Container>
+<Container id="about" class:list={["text-center"]}>
+  <Sectionhead>
+    <Fragment slot="title">{title}</Fragment>
+    <Fragment slot="desc">{tagline}</Fragment>
+  </Sectionhead>
+
+  {
+    about.map((info) => (
+  <div class=" flex flex-col mx-auto mt-16">
+    <div class="">
+        <h2 class="font-bold text-3xl text-gray-800 text-center mb-6">{info.title}</h2>
+        </div>
+    <div class="">
+        <p class="text-lg leading-relaxed text-slate-500">{info.text}</p>
+      </div>
+      </div>
+    ))
+  }
+  <div class=" flex flex-col mx-auto mt-16">
+      <h2 class="font-bold text-3xl text-gray-800 text-center mb-6">The Story</h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Founded on contract manufacturing works for industrial automation, we are
+        an ODM company with a rich background in driving hardware innovation in
+        Kenya, and solid traction in creating speciaised IP for electronic design
+        and manufacturing for local and global markets. This is a niche offering
+        that provides the highest value addition across the electronics
+        manufacturing value chain - product design/development.<br /> We saw a sizable
+        market potential fueled by the adoption of IoT in various sectors, which has
+        been enabled by the advent of low-cost hardware. Coupled with our expertise
+        in product development and mass manufacturing, this uniquely positions us to
+        create the right solutions for our customers.
+      </p>
+  </div>
+
+  <div class=" flex flex-col mx-auto mt-16">
+    <h2 class="font-bold text-3xl text-gray-800 text-center mb-6">The Grand Plan</h2>
+    <p class="text-lg leading-relaxed text-slate-500">
+      We are modeling the business into a hybrid enterprise that delivers mass
+      produced consumer products, complimented by the current provision of
+      product development services to our partners. <br/>Unencumbered by singular
+      brand definitions or a single market sector, we are definitive proof of
+      sustainable competitive advantages through a unique, capital efficient
+      business model with cleat revenue prospects. <br/>The goal is to support
+      innovators and enterprises in achieving their goals and capitalize on the
+      growing demands of an economy that is digitizing very rapidly. We have a
+      detailed roadmap and updated order book that showcases our success and
+      potential to be established as the preferred EMS company of the region.
+    </p>
+  </div>
+
+</Container>

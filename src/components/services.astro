@@ -2,10 +2,12 @@
 import Container from "./container.astro";
 import Sectionhead from "./sectionhead.astro";
 import { Icon } from "astro-icon";
+import { Children } from "react";
 const features = [
   {
     title: "Ideation",
-    description: "We collaborate with startups, enterprises and innovators across different sectors to generate feasible product ideas with clear development and manufacturing deliverables.", 
+    description:
+      "We collaborate with startups, enterprises and innovators across different sectors to generate feasible product ideas with clear development and manufacturing deliverables.",
     icon: "carbon:idea",
   },
   {
@@ -21,29 +23,84 @@ const features = [
     icon: "fluent:building-factory-16-filled",
   },
 ];
----
-<Container id="services">
-    <Sectionhead>
-      <Fragment slot="title">Our Services</Fragment>
-      <Fragment slot="desc"></Fragment>
-    </Sectionhead>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+const cycle = [
   {
-    features.map((item,index) => (
-      <div class="flex gap-4 items-start">
-      <div class="mt-1 bg-orange-500 rounded-full  p-2 w-20 h-20 shrink-0"> 
-          {(
-             <Icon class="text-black" name={item.icon} />
-          )}
-        
+    title: "Concept design",
+    text: "We help you develop and protect your idea through the following steps: ",
+    children: [
+      "Design review and technical feasibility analysis.",
+      "Specification definition.",
+      "Conceptual design.",
+      "Intellectual property and patent advisory.",
+    ],
+  },
+  {
+    title: "Prototyping",
+    text: "Bring your idea to life:",
+    children: [
+      "Make or buy reviews.",
+      "Rapid Prototyping and PoC.",
+      "PCB and schematic design.",
+      "Software and firmware design.",
+      "Product Enclosure design",
+    ],
+  },
+
+  {
+    title: "Optimization and Design for Manufacture",
+    text: "Preparing your products for mass production:",
+    children: [
+      "Developing test procedures and field testing of  products",
+      "Optimizing the designs for manufacture i.e. mold designs, PCB designs and firmware",
+      "Planning the production line, supply chain and logistics.",
+      "Acquiring required certifications for the products.",
+    ],
+  },
+];
+---
+
+<Container id="services">
+  <Sectionhead>
+    <Fragment slot="title">Our Services</Fragment>
+    <Fragment slot="desc"></Fragment>
+  </Sectionhead>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+    {
+      features.map((item) => (
+        <div class="flex gap-4 items-start">
+          <div class="mt-1 bg-orange-500 rounded-full  p-2 w-20 h-20 shrink-0">
+            {<Icon class="text-black" name={item.icon} />}
           </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-lg text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          <div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+            <p class="text-lg text-slate-500 mt-2 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
         </div>
-      </div>
-    ))
-  }
-</div>
+      ))
+    }
+
+  </div>
+
+  <Sectionhead>
+    <Fragment slot="title">How We Do It</Fragment>
+    <Fragment slot="desc"></Fragment>
+  </Sectionhead>
+    {
+      cycle.map((info,index) => (
+        <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+          <h2 class="font-bold text-3xl text-gray-800"> <span class="text-orange-500">{index+1}</span>. {info.title}</h2>
+          <div class="text-slate-500">
+          <p class="text-lg leading-relaxed">{info.text}</p>
+          <ul class="list-disc">
+            {info.children.map((child) => (
+              <li>{child}</li>
+            ))}
+          </ul></div>
+        </div>
+      ))
+    }
 </Container>
